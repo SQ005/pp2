@@ -1,4 +1,7 @@
+# List items are ordered, changeable, and allow duplicate values.
+
 mylist =  ["banana", "apple", "cherry"]
+
 print(mylist)
 
 mylist.append("messi")
