@@ -1,25 +1,25 @@
 # #1///
-# import datetime
-# def five_days():
-#     d = datetime.date.today()
-#     l = datetime.timedelta(days = 5)
-#     print(d - l)
-# five_days()
+import datetime
+def five_days():
+    d = datetime.date.today()
+    l = datetime.timedelta(days = 5)
+    print(d - l)
+five_days()
 # #2///
-# import datetime
-# def days():
-#     d = datetime.date.today()
-#     l = datetime.timedelta(days = 1)
-#     print(d - l)
-#     print(d)
-#     print(d + l)
-# days()
+import datetime
+def days():
+    d = datetime.date.today()
+    l = datetime.timedelta(days = 1)
+    print(d - l)
+    print(d)
+    print(d + l)
+days()
 # #3///
-# import datetime
-# def micro():
-#     d = datetime.datetime.today().replace(microsecond = 0)
-#     print(d)
-# micro()
+import datetime
+def micro():
+    d = datetime.datetime.today().replace(microsecond = 0)
+    print(d)
+micro()
 #4///
 import datetime as dt
 def sec():
