@@ -8,4 +8,5 @@ with open("data.json", "r") as json_file:
 for i in a['imdata']:
     print(i['l1PhysIf']['attributes']['dn'])
                
-
+import os
+print(os.getcwd())
