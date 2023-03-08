@@ -6,6 +6,8 @@ mult = 1
 for n in list:
   mult *= int(n)
 print("Mult = ",mult)
+
+
 #2///
 def up_low(s):
     u = sum(1 for i in s if i.isupper())
