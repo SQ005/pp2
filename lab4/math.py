@@ -4,6 +4,8 @@ n = 15
 def d_to_r(n):
     print(n * (math.pi / 180))
 d_to_r(n)
+
+
 #2///
 import math
 def  area_of():
@@ -12,6 +14,8 @@ def  area_of():
     b = 6
     print(((a + b) * h) / 2)
 area_of()
+
+
 #3///
 from math import tan, pi
 def area_of_reg():
@@ -20,6 +24,8 @@ def area_of_reg():
     P_area = n_sides * (s_lenght**2) / (4 * tan(pi / n_sides))
     print("The area of the pollygon is ", P_area)
 area_of_reg()
+
+
 #4///
 import math
 def area_of_par():
