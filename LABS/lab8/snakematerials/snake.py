@@ -14,10 +14,13 @@ HEIGHT = 400
 WIDTH = 400
 MAX_LEVEL = 2
 SCORE = 0
-font = pygame.font.SysFont("comicsansms", 35)
+LEVEL = 0
+SPEED = 5
+#add font
+# font = pygame.font.SysFont("comicsansms", 35)
+font = pygame.font.SysFont("verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
 
-# text = font.render(SCORE, True, (0, 128, 0))
 CELL_WIDTH = 20
 BLOCK_SIZE = 20
 
@@ -59,6 +62,7 @@ class Snake:
         self.level = 1
 
     def move(self):
+        self.rect.move_ip(0,SPEED)
         for i in range(len(self.body) - 1, 0, -1):
             self.body[i].x = self.body[i-1].x
             self.body[i].y = self.body[i-1].y
@@ -99,7 +103,9 @@ class Snake:
 
 
 
-        
+#Adding a new User event 
+INC_SPEED = pygame.USEREVENT + 1
+pygame.time.set_timer(INC_SPEED, 1000)
 
 def main():
     global SCREEN, CLOCK
@@ -148,10 +154,12 @@ def main():
         snake.check_collision(food)
 
         if len(snake.body) > 4 and len(snake.body) % 2 == 1:
+            global LEVEL
             new_level = (snake.level + 1) % MAX_LEVEL
             snake = Snake()
             snake.level = new_level
             wall = Wall(snake.level)
+            LEVEL += 1
 
 
         SCREEN.fill(BLACK)
@@ -162,10 +170,15 @@ def main():
         wall.draw()
         drawGrid()
         """add scores"""
-        scores = font.render(str(SCORE), True, (0,255,0))
-        SCREEN.blit(scores,(350,0))
+        scores = font.render("Score:" + str(SCORE), True, (0,255,0))
+        SCREEN.blit(scores,(300,0))
+        count_level = font.render(("Level:" + str(LEVEL)), True, (0,255,0))
+        SCREEN.blit(count_level, (50,0))
+
+
         pygame.display.update()
         CLOCK.tick(5)
+
 
 
 def drawGrid():
